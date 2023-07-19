@@ -17,7 +17,6 @@
                             <!-- form start -->
                             <form role="form" method="POST" action="{% url 'add_course_save' %}">
                                 {% csrf_token %}
-            
                                 
                                         {% comment %} Display Messages {% endcomment %}
                                         {% if messages %}
@@ -42,9 +41,8 @@
                                             {% endfor %}
                                         </div>
                                         </div>
-                                        {% endif %}
+                                    {% endif %}
                                     
-            
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label>Nombre del Curso </label>
@@ -53,18 +51,14 @@
             
                                 </div>
                                 <!-- /.card-body -->
-            
                                 <div class="card-footer">
                                 <button type="submit" class="btn btn-primary">Agregar</button>
                                 </div>
                             </form>
                             </div>
                             <!-- /.card -->
-            
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
 {% endblock %}
