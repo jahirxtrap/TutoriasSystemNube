@@ -37,12 +37,12 @@ class AddStudentForm(forms.Form):
         session_year_list = []
     
     gender_list = (
-        ('Masculino','Masculino'),
-        ('Femenino','Femenino')
+        ('Male','Male'),
+        ('Female','Female')
     )
     
     course_id = forms.ChoiceField(label="Curso", choices=course_list, widget=forms.Select(attrs={"class":"form-control"}))
-    gender = forms.ChoiceField(label="Genero", choices=gender_list, widget=forms.Select(attrs={"class":"form-control"}))
+    gender = forms.ChoiceField(label="Género", choices=gender_list, widget=forms.Select(attrs={"class":"form-control"}))
     session_year_id = forms.ChoiceField(label="Año de sesión", choices=session_year_list, widget=forms.Select(attrs={"class":"form-control"}))
     session_start_year = forms.DateField(label="Inicio de sesión", widget=DateInput(attrs={"class":"form-control"}))
     session_end_year = forms.DateField(label="Fin de sesión", widget=DateInput(attrs={"class":"form-control"}))
