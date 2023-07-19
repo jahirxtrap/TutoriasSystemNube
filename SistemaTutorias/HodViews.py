@@ -230,7 +230,7 @@ def edit_course_save(request):
             course.course_name = course_name
             course.save()
 
-            messages.success(request, "Curso Creado")
+            messages.success(request, "Curso Actualizado")
             return redirect('/edit_course/'+course_id)
 
         except:
