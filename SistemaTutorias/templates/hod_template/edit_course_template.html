@@ -1,11 +1,11 @@
-  {% extends 'hod_template/base_template.html' %}
-  {% load static %}
+{% extends 'hod_template/base_template.html' %}
+{% load static %}
   
-  {% block content %}
+{% block content %}
   
-          <div class="dashboard-wrapper">
-              <div class="dashboard-ecommerce">
-                  <div class="container-fluid dashboard-content">
+        <div class="dashboard-wrapper">
+            <div class="dashboard-ecommerce">
+                <div class="container-fluid dashboard-content">
                     <div class="row">
                         <div class="col-md-12">
                             <!-- general form elements -->
@@ -17,6 +17,7 @@
                             <!-- form start -->
                             <form role="form" method="POST" action="{% url 'edit_course_save' %}">
                                 {% csrf_token %}
+
                                         {% comment %} Display Messages {% endcomment %}
                                         {% if messages %}
                                         <div class="form-group">
@@ -59,8 +60,6 @@
                             <!-- /.card -->
                         </div>
                     </div>
-                  </div>
-              </div>
-          </div>
-  
+                </div>
+            </div>
 {% endblock %}
