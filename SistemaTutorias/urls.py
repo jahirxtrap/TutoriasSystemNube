@@ -7,6 +7,7 @@ from .import HodViews, StaffViews, StudentViews
 urlpatterns = [
     
     path('', views.home, name="home"),
+<<<<<<< HEAD
     path('', views.loginPage, name="login"),
     path('accounts/', include('django.contrib.auth.urls')),
     path('doLogin/', views.doLogin, name="doLogin"),
@@ -19,6 +20,22 @@ urlpatterns = [
     path('edit_staff/<staff_id>/', HodViews.edit_staff, name="edit_staff"),
     path('edit_staff_save/', HodViews.edit_staff_save, name="edit_staff_save"),
     path('delete_staff/<staff_id>/', HodViews.delete_staff, name="delete_staff"),
+=======
+    path('add_hod/', HodViews.add_hod, name="add_hod"),
+    path('add_hod_save/', HodViews.add_hod_save, name="add_hod_save"),
+    #path('', views.loginPage, name="login"),
+    #path('accounts/', include('django.contrib.auth.urls')),
+    #path('doLogin/', views.doLogin, name="doLogin"),
+    #path('get_user_details/', views.get_user_details, name="get_user_details"),
+    #path('logout_user/', views.logout_user, name="logout_user"),
+    #path('admin_home/', HodViews.admin_home, name="admin_home"),
+    #path('add_staff/', HodViews.add_staff, name="add_staff"),
+    #path('add_staff_save/', HodViews.add_staff_save, name="add_staff_save"),
+    #path('manage_staff/', HodViews.manage_staff, name="manage_staff"),
+    #path('edit_staff/<staff_id>/', HodViews.edit_staff, name="edit_staff"),
+    #path('edit_staff_save/', HodViews.edit_staff_save, name="edit_staff_save"),
+    #path('delete_staff/<staff_id>/', HodViews.delete_staff, name="delete_staff"),
+>>>>>>> 4d88e762f909d9fd80f55771818640b08d52b14e
     path('add_course/', HodViews.add_course, name="add_course"),
     path('add_course_save/', HodViews.add_course_save, name="add_course_save"),
     path('manage_course/', HodViews.manage_course, name="manage_course"),
