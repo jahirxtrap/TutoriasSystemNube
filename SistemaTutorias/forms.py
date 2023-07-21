@@ -9,7 +9,7 @@ class DateInput(forms.DateInput):
 
 class AddStudentForm(forms.Form):
     email = forms.EmailField(label="Correo", max_length=50, widget=forms.EmailInput(attrs={"class":"form-control"}))
-    password = forms.CharField(label="Contrasena", max_length=50, widget=forms.PasswordInput(attrs={"class":"form-control"}))
+    password = forms.CharField(label="Contraseña", max_length=50, widget=forms.PasswordInput(attrs={"class":"form-control"}))
     first_name = forms.CharField(label="Primer Nombre", max_length=50, widget=forms.TextInput(attrs={"class":"form-control"}))
     last_name = forms.CharField(label="Primer Apellido", max_length=50, widget=forms.TextInput(attrs={"class":"form-control"}))
     username = forms.CharField(label="Nombre de Usuario", max_length=50, widget=forms.TextInput(attrs={"class":"form-control"}))
