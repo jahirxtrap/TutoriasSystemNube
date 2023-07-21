@@ -11,6 +11,31 @@ from SistemaTutorias.models import CustomUser, Staffs, Courses, Subjects, Studen
 from .forms import AddStudentForm, EditStudentForm
 
 
+def add_hod(request):
+    return render(request, "hod_template/add_hod_template.html")
+
+
+def add_hod_save(request):
+    if request.method != "POST":
+        messages.error(request, "Metodo invalido")
+        return redirect('add_hod')
+    else:
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+
+        try:
+            user = CustomUser.objects.create_user(username=username, password=password, email=email, first_name=first_name, last_name=last_name, user_type=1)
+            user.save()
+            messages.success(request, "Admin Registrado!")
+            return redirect('add_hod')
+        except:
+            messages.error(request, "Error de Registro!")
+            return redirect('add_hod')
+        
+        
 def admin_home(request):
     all_student_count = Students.objects.all().count()
     subject_count = Subjects.objects.all().count()

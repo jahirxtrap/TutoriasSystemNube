@@ -7,6 +7,8 @@ from .import HodViews, StaffViews, StudentViews
 urlpatterns = [
     
     path('', views.home, name="home"),
+    path('add_hod/', HodViews.add_hod, name="add_hod"),
+    path('add_hod_save/', HodViews.add_hod_save, name="add_hod_save"),
     #path('', views.loginPage, name="login"),
     #path('accounts/', include('django.contrib.auth.urls')),
     #path('doLogin/', views.doLogin, name="doLogin"),
