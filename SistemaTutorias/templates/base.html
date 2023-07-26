@@ -18,15 +18,16 @@
     <link rel="stylesheet" href="{% static 'assets/vendor/charts/c3charts/c3.css' %}">
     <link rel="stylesheet" href="{% static 'assets/vendor/fonts/flag-icon-css/flag-icon.min.css' %}">
     <title>Gestion de Tutorias</title>
+    
+	{% block custom_css %} {% endblock custom_css %}
+    
 </head>
 
-{% block content %}
+    {% block content %} {% endblock %}
 
-{% endblock %}
-
-
-    </div>
-    <!-- end main wrapper  -->
+    {% block footer %}
+        {% include 'footer.html' %}
+    {% endblock %}
 
     <script src="{% static 'assets/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.js' %}"></script>
@@ -40,6 +41,9 @@
     <script src="{% static 'assets/vendor/charts/c3charts/d3-5.4.0.min.js' %}"></script>
     <script src="{% static 'assets/vendor/charts/c3charts/C3chartjs.js' %}"></script>
     <script src="{% static 'assets/libs/js/dashboard-ecommerce.js' %}"></script>
+
+    {% block custom_js %} {% endblock custom_js %}
+
 </body>
- 
+
 </html>
