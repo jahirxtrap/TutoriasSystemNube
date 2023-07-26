@@ -9,43 +9,15 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <!-- general form elements -->
                     <div class="card card-primary">
                     <div class="card-header">
                         <h3 class="card-title">Agregar Profesor</h3>
                     </div>
 
-                    <!-- /.card-header -->
-                    <!-- form start -->
                     <form role="form" method="POST" action="{% url 'add_staff_save' %}">
                         {% csrf_token %}
-
-                        
-                                {% comment %} Display Messages {% endcomment %}
-                                {% if messages %}
-                                <div class="form-group">
-                                <div class="col-12">
-                                    {% for message in messages %}
-                                    {% if message.tags == "error" %}
-                                        <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top: 10px;">
-                                        {{ message }}
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                        </div>
-                                    {% elif message.tags == "success" %}
-                                        <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top: 10px;">
-                                        {{ message }}
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                        </div>
-                                    {% endif %}
-                                    {% endfor %}
-                                </div>
-                                </div>
-                                {% endif %}
-                            
+                        {% comment %} Display Messages {% endcomment %}
+                        {% include 'message.html' %}
 
                         <div class="card-body">
                             <div class="form-group">
@@ -77,30 +49,18 @@
                                 <label>Direccion</label>
                                 <textarea class="form-control" name="address" placeholder="Ingrese su Direccion"></textarea>
                             </div>
-
-                            
-
-
                         </div>
-                        <!-- /.card-body -->
 
                         <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Agregar Profesor</button>
+                            <button type="submit" class="btn btn-primary">Agregar Profesor</button>
                         </div>
                     </form>
-                    </div>
-                    <!-- /.card -->
-
                 </div>
-            </div>
 
-        </div><!-- /.container-fluid -->
-      </section>
+{% endblock content %}
 
-  {% endblock content %}
-
-    {% block custom_js %}
-    {% comment %} Checking if email and username already exists or not usin Ajax {% endcomment %}
+{% block custom_js %}
+{% comment %} Checking if email and username already exists or not usin Ajax {% endcomment %}
 
     <script>
         $(document).ready(function(){
@@ -172,4 +132,4 @@
         })
     </script>
 
-  {% endblock custom_js %}
+{% endblock custom_js %}

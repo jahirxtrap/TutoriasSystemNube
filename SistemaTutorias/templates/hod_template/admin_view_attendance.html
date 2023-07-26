@@ -3,7 +3,6 @@
 
 {% block content %}
 
-
 <div class="dashboard-wrapper">
     <div class="dashboard-ecommerce">
         <div class="container-fluid dashboard-content">
@@ -15,34 +14,9 @@
                     <div class="card-header">
                         <h3 class="card-title">Ver asistencia</h3>
                     </div>
-                    <!-- /.card-header -->
-
-                                {% comment %} Display Messages {% endcomment %}
-                                {% if messages %}
-                                <div class="form-group">
-                                <div class="col-12">
-                                    {% for message in messages %}
-                                    {% if message.tags == "error" %}
-                                        <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top: 10px;">
-                                        {{ message }}
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                        </div>
-                                    {% elif message.tags == "success" %}
-                                        <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top: 10px;">
-                                        {{ message }}
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                        </div>
-                                    {% endif %}
-                                    {% endfor %}
-                                </div>
-                                </div>
-                                {% endif %}
+                        {% comment %} Display Messages {% endcomment %}
+                        {% include 'message.html' %}
                             
-
                         <div class="card-body">
                            
                             <div class="form-group">
@@ -94,23 +68,11 @@
 
                                 <button type="button" class="btn btn-primary" id="fetch_student">Obtener datos del estudiante</button>
                             </div>
-                            
-
+            
                         </div>
+                        
 
-                        <div class="card-footer" id="student_data">
-                        </div> 
-
-                    </div>
-                    <!-- /.card -->
-
-                </div>
-            </div>
-
-        </div><!-- /.container-fluid -->
-      </section>
-
-  {% endblock content %}
+{% endblock content %}
 
 {% block custom_js %}
 

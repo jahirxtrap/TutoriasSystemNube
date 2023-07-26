@@ -7,30 +7,8 @@
             <div class="dashboard-ecommerce">
                 <div class="container-fluid dashboard-content">
                     <a class="btn btn-primary" href="{% url 'add_student' %}" role="button">+ Agregar Estudiante</a> <br/>&nbsp;
-                    
-                    {% if messages %}
-                        <div class="form-group">
-                            <div class="col-12">
-                                {% for message in messages %}
-                                {% if message.tags == "error" %}
-                                        <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top: 10px;">
-                                            {{ message }}
-                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                    {% elif message.tags == "success" %}
-                                        <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top: 10px;">
-                                            {{ message }}
-                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                    {% endif %}
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        {% endif %}
+                    {% comment %} Display Messages {% endcomment %}
+                    {% include 'message.html' %}  
 
                     <div class="row">
                         <div class="col-md-12">
@@ -49,7 +27,6 @@
                                     </div>
                                 </div>
                                 <div class="card-body table-responsive p-0">
-                                    <!-- Tabla -->
                                     <table class="table table-hover text-nowrap">
                                         <thead>
                                             <tr>
@@ -94,7 +71,6 @@
                                             
                                         </tbody>
                                     </table>
-                                    <!-- Tabla -->
                                 </div>
                             </div>
                         </div>

@@ -15,33 +15,9 @@
 
                             <form role="form" method="POST" action="{% url 'add_session_save' %}">
                                 {% csrf_token %}
-
-                                        {% comment %} Display Messages {% endcomment %}
-                                        {% if messages %}
-                                        <div class="form-group">
-                                        <div class="col-12">
-                                            {% for message in messages %}
-                                            {% if message.tags == "error" %}
-                                                <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top: 10px;">
-                                                {{ message }}
-                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                                </div>
-                                            {% elif message.tags == "success" %}
-                                                <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top: 10px;">
-                                                {{ message }}
-                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                                </div>
-                                            {% endif %}
-                                            {% endfor %}
-                                        </div>
-                                        </div>
-                                    {% endif %}
+                                {% comment %} Display Messages {% endcomment %}
+                                {% include 'message.html' %}
                                     
-
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label>Año de inicio de sesión </label>
@@ -55,7 +31,7 @@
                                 </div>
 
                                 <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Agregar año de sesión</button>
+                                    <button type="submit" class="btn btn-primary">Agregar año de sesión</button>
                                 </div>
                             </form>
                         </div>
