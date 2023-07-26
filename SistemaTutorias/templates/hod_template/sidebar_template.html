@@ -15,7 +15,7 @@
                         {% url 'edit_staff' staff_id=id as edit_staff %}
                         <a href="{{ manage_staff }}"
                             class="nav-link {% if request.path == manage_staff %} active {% endif %} {% if request.path == edit_staff %} active {% endif %}">
-                            <i class="fa fa-fw fa-user"></i>Gestion Profesor
+                            <i class="fa fa-fw fa-user"></i>Gestionar Profesor
                         </a>
                     </li>
 
@@ -33,7 +33,7 @@
                         {% url 'edit_student' student_id=id as edit_student %}
                         <a href="{{ manage_student }}"
                             class="nav-link {% if request.path == manage_student %} active {% endif %} {% if request.path == edit_student %} active {% endif %}">
-                            <i class="fa fa-fw fa-user"></i>Gestion Estudiante
+                            <i class="fa fa-fw fa-user"></i>Gestionar Estudiante
                         </a>
                     </li>
 
@@ -70,7 +70,7 @@
                         {% url 'edit_subject' subject_id=id as edit_subject %}
                         <a href="{{ manage_subject }}"
                             class="nav-link {% if request.path == manage_subject %} active {% endif %} {% if request.path == edit_subject %} active {% endif %}">
-                            <i class="nav-icon fas fa-book"></i>Gestion de Tutoria
+                            <i class="nav-icon fas fa-book"></i>Gestionar Tutoría
                         </a>
                     </li>
 
@@ -78,7 +78,7 @@
                         {% url 'add_subject' as add_subject %}
                         <a href="{{ add_subject }}"
                             class="nav-link {% if request.path == add_subject %} active {% endif %}">
-                            <i class="fa fa-fw fa-plus"></i>Agregar Tutoria
+                            <i class="fa fa-fw fa-plus"></i>Agregar Tutoría
                         </a>
                     </li>
 
@@ -88,7 +88,7 @@
                         {% url 'edit_session' session_id=id as edit_session %}
                         <a href="{{ manage_session }}"
                             class="nav-link {% if request.path == manage_session %} active {% endif %} {% if request.path == edit_session %} active {% endif %}">
-                            <i class="nav-icon fas fa-graduation-cap"></i>Administrar sesión
+                            <i class="nav-icon fas fa-graduation-cap"></i>Gestionar Sesión
                         </a>
                     </li>
 
@@ -96,7 +96,7 @@
                         {% url 'add_session' as add_session %}
                         <a href="{{ add_session }}"
                             class="nav-link {% if request.path == add_session %} active {% endif %}">
-                            <i class="nav-icon fas fa-th"></i>Agregar sesión
+                            <i class="nav-icon fas fa-th"></i>Agregar Sesión
                         </a>
                     </li>
 
@@ -135,13 +135,11 @@
                         </a>
                     </li>
 
-
                     <li class="nav-item">
                         {% url 'staff_leave_view' as staff_leave_view %}
                         <a href="{{ staff_leave_view }}"
                             class="nav-link {% if request.path == staff_leave_view %} active {% endif %}">
-                            <i class="nav-icon fas fa-th"></i>
-                            Revisa profe
+                            <i class="nav-icon fas fa-th"></i>Revisa profe
                         </a>
                     </li>
                 </ul>
