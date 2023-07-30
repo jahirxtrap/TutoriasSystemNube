@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #APP
-    'SistemaTutorias',
+    'backend',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +57,7 @@ ROOT_URLCONF = 'configTutorias.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'frontend', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'configTutorias.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'database', 'db.sqlite3'),
     }
 }
 
@@ -120,15 +120,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/TemaAzul/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static/TemaAzul'),
+    os.path.join(BASE_DIR, 'frontend', 'static/TemaAzul'),
 ]
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'frontend', 'media')
 
 
 #For Custom USER
-AUTH_USER_MODEL = "SistemaTutorias.CustomUser"
+AUTH_USER_MODEL = "backend.CustomUser"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -136,4 +136,4 @@ AUTH_USER_MODEL = "SistemaTutorias.CustomUser"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Registering Custom Backend "EmailBackEnd"
-AUTHENTICATION_BACKENDS = ['SistemaTutorias.EmailBackEnd.EmailBackEnd']
+AUTHENTICATION_BACKENDS = ['backend.EmailBackEnd.EmailBackEnd']
