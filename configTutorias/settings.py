@@ -50,6 +50,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #
+    'backend.LoginCheckMiddleWare.LoginCheckMiddleWare',
 ]
 
 ROOT_URLCONF = 'configTutorias.urls'
@@ -111,6 +113,8 @@ LANGUAGE_CODE = 'es'
 TIME_ZONE = 'America/Guayaquil'
 
 USE_I18N = True
+
+USE_L10N = True
 
 USE_TZ = True
 

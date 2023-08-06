@@ -15,7 +15,7 @@ class AddStudentForm(forms.Form):
     username = forms.CharField(label="Nombre de Usuario", max_length=50, widget=forms.TextInput(attrs={"class":"form-control"}))
     address = forms.CharField(label="Direccion", max_length=50, widget=forms.TextInput(attrs={"class":"form-control"}))
 
-    #For Displaying Courses
+    #Para mostrar cursos
     try:
         courses = Courses.objects.all()
         course_list = []
@@ -25,7 +25,7 @@ class AddStudentForm(forms.Form):
     except:
         course_list = []
     
-    #For Displaying Session Years
+    #Para mostrar años de sesión
     try:
         session_years = SessionYearModel.objects.all()
         session_year_list = []
@@ -57,7 +57,7 @@ class EditStudentForm(forms.Form):
     username = forms.CharField(label="Nombre de usuario", max_length=50, widget=forms.TextInput(attrs={"class":"form-control"}))
     address = forms.CharField(label="Dirección", max_length=50, widget=forms.TextInput(attrs={"class":"form-control"}))
 
-    #For Displaying Courses
+    #Para ver cursos
     try:
         courses = Courses.objects.all()
         course_list = []
@@ -67,7 +67,7 @@ class EditStudentForm(forms.Form):
     except:
         course_list = []
 
-    #For Displaying Session Years
+    #ver sesiones
     try:
         session_years = SessionYearModel.objects.all()
         session_year_list = []

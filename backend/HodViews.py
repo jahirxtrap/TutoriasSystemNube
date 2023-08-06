@@ -10,7 +10,7 @@ import json
 from .models import CustomUser, Staffs, Courses, Subjects, Students, SessionYearModel, FeedBackStudent, FeedBackStaffs, LeaveReportStudent, LeaveReportStaff, Attendance, AttendanceReport
 from .forms import AddStudentForm, EditStudentForm
 
-
+#VISTAS EXTRAS DE ADMIN
 def add_hod(request):
     return render(request, "hod_template/add_hod_template.html")
 
@@ -34,6 +34,8 @@ def add_hod_save(request):
         except:
             messages.error(request, "Error de Registro!")
             return redirect('add_hod')
+#VISTAS EXTRAS DE ADMIN        
+        
         
         
 def admin_home(request):
@@ -416,12 +418,12 @@ def manage_student(request):
 
 
 def edit_student(request, student_id):
-    # Adding Student ID into Session Variable
+    # Agregar ID de estudiante a la variable de sesión
     request.session['student_id'] = student_id
 
     student = Students.objects.get(admin=student_id)
     form = EditStudentForm()
-    # Filling the form with Data from Database
+    # Llenar el formulario con datos de la base de datos
     form.fields['email'].initial = student.admin.email
     form.fields['username'].initial = student.admin.username
     form.fields['first_name'].initial = student.admin.first_name
@@ -760,7 +762,7 @@ def admin_get_attendance_dates(request):
 
 @csrf_exempt
 def admin_get_attendance_student(request):
-    # Obtener valores de Ajax POST 'Fetch Student'
+    # Obtener valores de Ajax POST 'Fetch Student'  
     attendance_date = request.POST.get('attendance_date')
     attendance = Attendance.objects.get(id=attendance_date)
 
@@ -786,7 +788,7 @@ def admin_profile(request):
 
 def admin_profile_update(request):
     if request.method != "POST":
-        messages.error(request, "Invalid Method!")
+        messages.error(request, "Metodo invalido admin actualizar!")
         return redirect('admin_profile')
     else:
         first_name = request.POST.get('first_name')

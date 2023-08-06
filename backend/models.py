@@ -88,7 +88,7 @@ class Attendance(models.Model):
 class AttendanceReport(models.Model):
     # Individual Student Attendance
     id = models.AutoField(primary_key=True)
-    student_id = models.ForeignKey(Students, on_delete=models.DO_NOTHING)
+    student_id = models.ForeignKey(Students, on_delete=models.CASCADE)
     attendance_id = models.ForeignKey(Attendance, on_delete=models.CASCADE)
     status = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -183,7 +183,7 @@ def create_user_profile(sender, instance, created, **kwargs):
         if instance.user_type == 2:
             Staffs.objects.create(admin=instance)
         if instance.user_type == 3:
-            Students.objects.create(admin=instance, course_id=Courses.objects.get(id=2), session_year_id=SessionYearModel.objects.get(id=1), address="", profile_pic="", gender="")
+            Students.objects.create(admin=instance, course_id=Courses.objects.get(id=1), session_year_id=SessionYearModel.objects.get(id=1), address="", profile_pic="", gender="")
     
 
 @receiver(post_save, sender=CustomUser)
