@@ -34,8 +34,8 @@
 						<li class="nav-item dropdown nav-user">
 							<a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cog mr-1"></i></a>
 							<div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
-								<a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Configuraciones</a>
-								<a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Cerrar sesión</a>
+								<a class="dropdown-item" href="{% url 'staff_profile' %}"><i class="fas fa-cog mr-2"></i>Configuraciones</a>
+								<a class="dropdown-item" href="{% url 'logout_user' %}"><i class="fas fa-power-off mr-2"></i>Cerrar sesión</a>
 							</div>
 						</li>
 					</ul>
