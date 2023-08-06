@@ -19,21 +19,21 @@
 					<li class="nav-item">
 						{% url 'student_view_result' as student_view_result %}
 						<a href="{{ student_view_result }}" class="nav-link {% if request.path == student_view_result %} active {% endif %}">
-							<span class="nav-icon fas fa-tasks"></span>&nbsp&nbsp&nbspVer Resultado
+							<span class="fa fa-fw fa-tasks"></span>&nbsp&nbsp&nbspVer Resultado
 						</a>
 					</li>
 
 					<li class="nav-item">
 						{% url 'student_apply_leave' as student_apply_leave %}
 						<a href="{{ student_apply_leave }}" class="nav-link {% if request.path == student_apply_leave %} active {% endif %}">
-							<span class="nav-icon fas fa-envelope-open-text"></span>&nbsp&nbsp&nbspAplicar para dejar
+							<span class="fa fa-fw fa-envelope-open"></span>&nbsp&nbsp&nbspAplicar para dejar
 						</a>
 					</li>
 
 					<li class="nav-item">
 						{% url 'student_feedback' as student_feedback %}
 						<a href="{{ student_feedback }}" class="nav-link {% if request.path == student_feedback %} active {% endif %}">
-							<span class="nav-icon fas fa-comments"></span>&nbsp&nbsp&nbspEnviar Comentario
+							<span class="fa fa-fw fa-comments"></span>&nbsp&nbsp&nbspEnviar Comentario
 						</a>
 					</li>
                 </ul>
