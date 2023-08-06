@@ -72,7 +72,7 @@ class EditStudentForm(forms.Form):
         session_years = SessionYearModel.objects.all()
         session_year_list = []
         for session_year in session_years:
-            single_session_year = (session_year.id, str(session_year.session_start_year)+" to "+str(session_year.session_end_year))
+            single_session_year = (session_year.id, str(session_year.session_start_year)+" a "+str(session_year.session_end_year))
             session_year_list.append(single_session_year)
             
     except:
