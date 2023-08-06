@@ -48,7 +48,7 @@ def doLogin(request):
 
 def get_user_details(request):
     if request.user != None:
-        return HttpResponse("User: "+request.user.email+" User Type: "+request.user.user_type)
+        return HttpResponse("Usuario: "+request.user.email+" Tipo de usuario: "+request.user.user_type)
     else:
         return HttpResponse("Por favor ingresa primero")
 
