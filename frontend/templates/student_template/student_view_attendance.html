@@ -21,7 +21,7 @@
 
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label>Subject </label>
+                                        <label>Tutoría</label>
                                         <select class="form-control" name="subject" id="subject">
                                             {% for subject in subjects %}
                                                 <option value="{{ subject.id }}">{{ subject.subject_name }}</option>
@@ -31,13 +31,13 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label>Start Date </label>
+                                                <label>Inicio</label>
                                                 <input type="date" class="form-control" name="start_date" />
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label>End Date </label>
+                                                <label>Fin</label>
                                                 <input type="date" class="form-control" name="end_date" />
                                             </div>
                                         </div>
@@ -45,11 +45,12 @@
                                 </div>
 
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary" id="fetch_student">Fetch Attendance</button>
+                                    <button type="submit" class="btn btn-primary" id="fetch_student">Obtener Asistencia</button>
                                 </div>
                                 <div class="card-footer" id="student_data"></div>
                             </form>
                         </div>
                     </div>
+                </div>
 
 {% endblock content %}
