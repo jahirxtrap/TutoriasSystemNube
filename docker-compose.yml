@@ -1,0 +1,30 @@
+version: '3.10.7'
+
+services:
+  # Nombre del servicio
+  web:
+    # Nombre del contenedor resultante
+    container_name: tutoriassystemnube
+    # Ruta en donde se encuentra el archivo Dockerfile
+    build: .
+    working_dir: /code
+    # Similar a los especificados en el Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
+    # Directorios del sistema anfitrión que se enlazan
+    # con los del contenedor.
+    volumes:
+      - .:/code
+    # Puerto que se expone hacia el sistema anfitrión
+    # desde el contenedor
+    ports:
+      - '8000:8000'
+    # Define la dependencia del servicio "sqlite3"
+    depends_on:
+      - sqlite3
+
+  sqlite3:
+    image: nouchka/sqlite3:latest
+    stdin_open: true
+    tty: true
+    volumes:
+      - "./database/:/root/db"
