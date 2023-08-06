@@ -82,7 +82,7 @@
                         </a>
                     </li>
 
-                    <!-- TUTORIAS -->
+                    <!-- SESIONES -->
                     <li class="nav-item">
                         {% url 'manage_session' as manage_session %}
                         {% url 'edit_session' session_id=id as edit_session %}
@@ -109,7 +109,7 @@
                         </a>
                     </li>
 
-                    <!-- COMENTATIOS -->
+                    <!-- COMENTARIOS -->
                     <li class="nav-item">
                         {% url 'student_feedback_message' as student_feedback_message %}
                         <a href="{{ student_feedback_message }}"
