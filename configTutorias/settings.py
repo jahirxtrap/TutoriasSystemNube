@@ -80,11 +80,14 @@ WSGI_APPLICATION = 'configTutorias.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'database', 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': 'localhost',
+        'PORT': '5432',
+        'NAME': 'dbtutos',
+        'USER': 'postgres',
+        'PASSWORD': 'root',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -110,13 +113,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'es'
 
-TIME_ZONE = 'America/Guayaquil'
+TIME_ZONE = 'UTC'
 
-USE_I18N = True
-
-USE_L10N = True
-
-USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
