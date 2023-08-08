@@ -1,7 +1,7 @@
 version: '3.10.7'
 
 services:
-  # Nombre del servicio
+  # Backend Django/python
   web:
     # Nombre del contenedor resultante
     container_name: back-end
@@ -22,6 +22,7 @@ services:
     depends_on:
       - sqlite3
 
+  # Database PostgreSQL
   sqlite3:
     container_name: db
     image: nouchka/sqlite3:latest
@@ -33,7 +34,7 @@ services:
   # Frontend Vue.js
   frontend:
     container_name: front-end
-    build: ./frontend/templates/vueapp
+    build: ./frontend/vueapp
     working_dir: /app
     command: npm run serve
     ports:

@@ -65,7 +65,7 @@ def staff_home(request):
         "attendance_present_list": student_list_attendance_present,
         "attendance_absent_list": student_list_attendance_absent
     }
-    return render(request, "staff_template/staff_home_template.html", context)
+    return render(request, "staff_template/staff_home_template.vue", context)
 
 
 
@@ -76,7 +76,7 @@ def staff_take_attendance(request):
         "subjects": subjects,
         "session_years": session_years
     }
-    return render(request, "staff_template/take_attendance_template.html", context)
+    return render(request, "staff_template/take_attendance_template.vue", context)
 
 
 def staff_apply_leave(request):
@@ -85,7 +85,7 @@ def staff_apply_leave(request):
     context = {
         "leave_data": leave_data
     }
-    return render(request, "staff_template/staff_apply_leave_template.html", context)
+    return render(request, "staff_template/staff_apply_leave_template.vue", context)
 
 
 def staff_apply_leave_save(request):
@@ -113,7 +113,7 @@ def staff_feedback(request):
     context = {
         "feedback_data":feedback_data
     }
-    return render(request, "staff_template/staff_feedback_template.html", context)
+    return render(request, "staff_template/staff_feedback_template.vue", context)
 
 
 def staff_feedback_save(request):
@@ -201,7 +201,7 @@ def staff_update_attendance(request):
         "subjects": subjects,
         "session_years": session_years
     }
-    return render(request, "staff_template/update_attendance_template.html", context)
+    return render(request, "staff_template/update_attendance_template.vue", context)
 
 @csrf_exempt
 def get_attendance_dates(request):
@@ -271,7 +271,7 @@ def staff_profile(request):
         "user": user,
         "staff": staff
     }
-    return render(request, 'staff_template/staff_profile.html', context)
+    return render(request, 'staff_template/staff_profile.vue', context)
 
 
 def staff_profile_update(request):
@@ -311,7 +311,7 @@ def staff_add_result(request):
         "subjects": subjects,
         "session_years": session_years,
     }
-    return render(request, "staff_template/add_result_template.html", context)
+    return render(request, "staff_template/add_result_template.vue", context)
 
 
 def staff_add_result_save(request):

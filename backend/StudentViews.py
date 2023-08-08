@@ -38,7 +38,7 @@ def student_home(request):
         "data_present": data_present,
         "data_absent": data_absent
     }
-    return render(request, "student_template/student_home_template.html", context)
+    return render(request, "student_template/student_home_template.vue", context)
 
 
 def student_view_attendance(request):
@@ -49,7 +49,7 @@ def student_view_attendance(request):
     context = {
         "subjects": subjects
     }
-    return render(request, "student_template/student_view_attendance.html", context)
+    return render(request, "student_template/student_view_attendance.vue", context)
 
 
 def student_view_attendance_post(request):
@@ -83,7 +83,7 @@ def student_view_attendance_post(request):
             "attendance_reports": attendance_reports
         }
 
-        return render(request, 'student_template/student_attendance_data.html', context)
+        return render(request, 'student_template/student_attendance_data.vue', context)
        
 
 def student_apply_leave(request):
@@ -92,7 +92,7 @@ def student_apply_leave(request):
     context = {
         "leave_data": leave_data
     }
-    return render(request, 'student_template/student_apply_leave.html', context)
+    return render(request, 'student_template/student_apply_leave.vue', context)
 
 
 def student_apply_leave_save(request):
@@ -120,7 +120,7 @@ def student_feedback(request):
     context = {
         "feedback_data": feedback_data
     }
-    return render(request, 'student_template/student_feedback.html', context)
+    return render(request, 'student_template/student_feedback.vue', context)
 
 
 def student_feedback_save(request):
@@ -149,7 +149,7 @@ def student_profile(request):
         "user": user,
         "student": student
     }
-    return render(request, 'student_template/student_profile.html', context)
+    return render(request, 'student_template/student_profile.vue', context)
 
 
 def student_profile_update(request):
@@ -187,7 +187,7 @@ def student_view_result(request):
     context = {
         "student_result": student_result,
     }
-    return render(request, "student_template/student_view_result.html", context)
+    return render(request, "student_template/student_view_result.vue", context)
 
 
 

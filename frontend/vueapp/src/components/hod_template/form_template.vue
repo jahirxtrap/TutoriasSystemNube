@@ -1,0 +1,25 @@
+<form role="form" method="POST" action="{{ action_path }}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% comment %} Display Messages {% endcomment %}
+    {% include 'message.vue' %}
+
+    <div class="card-body">
+        
+        {% comment %} Adding Form with All inputs Here {% endcomment %}
+
+        {% for field in form %}
+            <div class="form-group">
+
+                {{ field.errors }}
+                {{ field.label_tag }}
+                {{ field }}
+
+            </div>
+        {% endfor %%}
+
+    </div>
+
+    <div class="card-footer">
+        <button type="submit" class="btn btn-primary">{{ button_text }}</button>
+    </div>
+</form>

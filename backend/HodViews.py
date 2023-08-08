@@ -12,7 +12,7 @@ from .forms import AddStudentForm, EditStudentForm
 
 #VISTAS EXTRAS DE ADMIN
 def add_hod(request):
-    return render(request, "hod_template/add_hod_template.html")
+    return render(request, "hod_template/add_hod_template.vue")
 
 
 def add_hod_save(request):
@@ -112,11 +112,11 @@ def admin_home(request):
         "student_attendance_leave_list": student_attendance_leave_list,
         "student_name_list": student_name_list,
     }
-    return render(request, "hod_template/home_content.html", context)
+    return render(request, "hod_template/home_content.vue", context)
 
 
 def add_staff(request):
-    return render(request, "hod_template/add_staff_template.html")
+    return render(request, "hod_template/add_staff_template.vue")
 
 
 def add_staff_save(request):
@@ -148,7 +148,7 @@ def manage_staff(request):
     context = {
         "staffs": staffs
     }
-    return render(request, "hod_template/manage_staff_template.html", context)
+    return render(request, "hod_template/manage_staff_template.vue", context)
 
 
 def edit_staff(request, staff_id):
@@ -158,7 +158,7 @@ def edit_staff(request, staff_id):
         "staff": staff,
         "id": staff_id
     }
-    return render(request, "hod_template/edit_staff_template.html", context)
+    return render(request, "hod_template/edit_staff_template.vue", context)
 
 
 def edit_staff_save(request):
@@ -209,7 +209,7 @@ def delete_staff(request, staff_id):
 
 
 def add_course(request):
-    return render(request, "hod_template/add_course_template.html")
+    return render(request, "hod_template/add_course_template.vue")
 
 
 def add_course_save(request):
@@ -233,7 +233,7 @@ def manage_course(request):
     context = {
         "courses": courses
     }
-    return render(request, 'hod_template/manage_course_template.html', context)
+    return render(request, 'hod_template/manage_course_template.vue', context)
 
 
 def edit_course(request, course_id):
@@ -242,7 +242,7 @@ def edit_course(request, course_id):
         "course": course,
         "id": course_id
     }
-    return render(request, 'hod_template/edit_course_template.html', context)
+    return render(request, 'hod_template/edit_course_template.vue', context)
 
 
 def edit_course_save(request):
@@ -281,11 +281,11 @@ def manage_session(request):
     context = {
         "session_years": session_years
     }
-    return render(request, "hod_template/manage_session_template.html", context)
+    return render(request, "hod_template/manage_session_template.vue", context)
 
 
 def add_session(request):
-    return render(request, "hod_template/add_session_template.html")
+    return render(request, "hod_template/add_session_template.vue")
 
 
 def add_session_save(request):
@@ -311,7 +311,7 @@ def edit_session(request, session_id):
     context = {
         "session_year": session_year
     }
-    return render(request, "hod_template/edit_session_template.html", context)
+    return render(request, "hod_template/edit_session_template.vue", context)
 
 
 def edit_session_save(request):
@@ -352,7 +352,7 @@ def add_student(request):
     context = {
         "form": form
     }
-    return render(request, 'hod_template/add_student_template.html', context)
+    return render(request, 'hod_template/add_student_template.vue', context)
 
 
 
@@ -414,7 +414,7 @@ def manage_student(request):
     context = {
         "students": students
     }
-    return render(request, 'hod_template/manage_student_template.html', context)
+    return render(request, 'hod_template/manage_student_template.vue', context)
 
 
 def edit_student(request, student_id):
@@ -438,7 +438,7 @@ def edit_student(request, student_id):
         "username": student.admin.username,
         "form": form
     }
-    return render(request, "hod_template/edit_student_template.html", context)
+    return render(request, "hod_template/edit_student_template.vue", context)
 
 
 def edit_student_save(request):
@@ -524,7 +524,7 @@ def add_subject(request):
         "courses": courses,
         "staffs": staffs
     }
-    return render(request, 'hod_template/add_subject_template.html', context)
+    return render(request, 'hod_template/add_subject_template.vue', context)
 
 
 
@@ -556,7 +556,7 @@ def manage_subject(request):
     context = {
         "subjects": subjects
     }
-    return render(request, 'hod_template/manage_subject_template.html', context)
+    return render(request, 'hod_template/manage_subject_template.vue', context)
 
 
 def edit_subject(request, subject_id):
@@ -569,7 +569,7 @@ def edit_subject(request, subject_id):
         "staffs": staffs,
         "id": subject_id
     }
-    return render(request, 'hod_template/edit_subject_template.html', context)
+    return render(request, 'hod_template/edit_subject_template.vue', context)
 
 
 def edit_subject_save(request):
@@ -641,7 +641,7 @@ def student_feedback_message(request):
     context = {
         "feedbacks": feedbacks
     }
-    return render(request, 'hod_template/student_feedback_template.html', context)
+    return render(request, 'hod_template/student_feedback_template.vue', context)
 
 
 @csrf_exempt
@@ -664,7 +664,7 @@ def staff_feedback_message(request):
     context = {
         "feedbacks": feedbacks
     }
-    return render(request, 'hod_template/staff_feedback_template.html', context)
+    return render(request, 'hod_template/staff_feedback_template.vue', context)
 
 
 @csrf_exempt
@@ -687,7 +687,7 @@ def student_leave_view(request):
     context = {
         "leaves": leaves
     }
-    return render(request, 'hod_template/student_leave_view.html', context)
+    return render(request, 'hod_template/student_leave_view.vue', context)
 
 def student_leave_approve(request, leave_id):
     leave = LeaveReportStudent.objects.get(id=leave_id)
@@ -708,7 +708,7 @@ def staff_leave_view(request):
     context = {
         "leaves": leaves
     }
-    return render(request, 'hod_template/staff_leave_view.html', context)
+    return render(request, 'hod_template/staff_leave_view.vue', context)
 
 
 def staff_leave_approve(request, leave_id):
@@ -732,7 +732,7 @@ def admin_view_attendance(request):
         "subjects": subjects,
         "session_years": session_years
     }
-    return render(request, "hod_template/admin_view_attendance.html", context)
+    return render(request, "hod_template/admin_view_attendance.vue", context)
 
 
 @csrf_exempt
@@ -783,7 +783,7 @@ def admin_profile(request):
     context={
         "user": user
     }
-    return render(request, 'hod_template/admin_profile.html', context)
+    return render(request, 'hod_template/admin_profile.vue', context)
 
 
 def admin_profile_update(request):

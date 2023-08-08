@@ -8,12 +8,12 @@ from .EmailBackEnd import EmailBackEnd
 
 
 def home(request):
-    return render(request, 'hod_template/base_template.html')
+    return render(request, 'hod_template/base_template.vue')
 
 
 
 def loginPage(request):
-    return render(request, 'login.html')
+    return render(request, 'login.vue')
 
 
 
