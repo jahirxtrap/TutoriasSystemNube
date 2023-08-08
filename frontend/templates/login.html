@@ -3,15 +3,15 @@
 
 {% block content %}
 
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="margin-left: 30%; margin-right: 30%; margin-top: 10%;">
     <div class="login-box">
         <div class="login-logo">
             <a href="{% url 'login' %}"><b>Sistema </b>Gestion Tutorias</a>
         </div>
         <!-- /.login-logo -->
         <div class="card">
-            <div class="card-body login-card-body">
-                <p class="login-box-msg">Iniciar sesión en el sistema</p>
+            <div class="card-body login-card-body" style="margin-left: 5%; margin-right: 5%; margin-top: 5%; margin-bottom: 5%;">
+                <h3 class="login-box-msg">Iniciar sesión en el sistema</h3>
 
                 <form action="{% url 'doLogin' %}" method="POST">
                     {% csrf_token %}
@@ -31,9 +31,9 @@
                                 <span class="fas fa-lock"></span>
                             </div>
                         </div>
-                    </div>
+                    </div><hr>
 
-                    <div class="col-12">
+                    <div>
                         <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
                     </div>
 

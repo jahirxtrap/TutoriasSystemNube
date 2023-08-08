@@ -124,7 +124,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/TemaAzul/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'frontend', 'static/TemaAzul'),
+    os.path.join(BASE_DIR, 'frontend', 'static/TemaAzul'),  # Ruta existente
+    os.path.join(BASE_DIR, 'Frontend/vueapp/dist/static'),  # Nueva ruta de Vue.js
 ]
 
 MEDIA_URL = '/media/'
