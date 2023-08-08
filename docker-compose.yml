@@ -4,7 +4,7 @@ services:
   # Nombre del servicio
   web:
     # Nombre del contenedor resultante
-    container_name: tutoriassystemnube
+    container_name: back-end
     # Ruta en donde se encuentra el archivo Dockerfile
     build: .
     working_dir: /code
@@ -23,8 +23,20 @@ services:
       - sqlite3
 
   sqlite3:
+    container_name: db
     image: nouchka/sqlite3:latest
     stdin_open: true
     tty: true
     volumes:
       - "./database/:/root/db"
+
+  # Frontend Vue.js
+  frontend:
+    container_name: front-end
+    build: ./frontend/templates/vueapp
+    working_dir: /app
+    command: npm run serve
+    ports:
+      - "8080:8080"
+    depends_on:
+      - web
