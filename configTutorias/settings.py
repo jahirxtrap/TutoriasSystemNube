@@ -81,13 +81,14 @@ WSGI_APPLICATION = 'configTutorias.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': 'localhost',
-        'PORT': '5432',
-        'NAME': 'dbtutos',
-        'USER': 'postgres',
-        'PASSWORD': 'root',
+        'NAME': 'databaseTP',
+        'USER': 'admin',
+        'PASSWORD': '1234',
+        'HOST': 'postgres',  # Por ejemplo, 'postgres' si utilizas Docker Compose.
+        'PORT': '5432',  # Puerto por defecto de PostgreSQL.
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -114,7 +115,6 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'es'
 
 TIME_ZONE = 'UTC'
-
 
 
 # Static files (CSS, JavaScript, Images)

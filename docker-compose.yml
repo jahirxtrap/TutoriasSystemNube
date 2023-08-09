@@ -1,10 +1,7 @@
 version: '3.10.7'
 
 services:
-<<<<<<< HEAD
-=======
   # Backend Django/python
->>>>>>> d59991fe5a79f0d198050f4ea285240632423675
   web:
     # Nombre del contenedor resultante
     container_name: back-end
@@ -21,18 +18,22 @@ services:
     # desde el contenedor
     ports:
       - '8000:8000'
-    # Define la dependencia del servicio "sqlite3"
+    # Define la dependencia del servicio "postgres"
     depends_on:
-      - sqlite3
+      - postgres
 
   # Database PostgreSQL
-  sqlite3:
-    container_name: db
-    image: nouchka/sqlite3:latest
-    stdin_open: true
-    tty: true
+  postgres:
+    container_name: database
+    image: postgres
+    ports:
+      - '5432:5432'
     volumes:
-      - "./database/:/root/db"
+      - ./database/postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: databaseTP
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 1234
 
   # Frontend Vue.js
   frontend:

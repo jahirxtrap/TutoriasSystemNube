@@ -22,7 +22,10 @@ COPY . /code/
 ENV DJANGO_SETTINGS_MODULE=configTutorias.settings
 
 # Ejecuta las migraciones de Django y recoge los archivos estáticos
-RUN python manage.py migrate
+# RUN python manage.py migrate
+
+# Las migraciones iniciales se hacen de forma manual dentro de docker
+# python manage.py makemigrations, python manage.py migrate
 
 # Exponer el puerto 8000 para que pueda ser accedido desde fuera del contenedor
 EXPOSE 8000
