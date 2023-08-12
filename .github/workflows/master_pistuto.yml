@@ -1,0 +1,51 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+name: Build and deploy container app to Azure Web App - pistuto
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: 'ubuntu-latest'
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    - name: Log in to registry
+      uses: docker/login-action@v2
+      with:
+        registry: https://contpis.azurecr.io/
+        username: ${{ secrets.AzureAppService_ContainerUsername_ea90f3e30dc74c68a1b408963e8c69f5 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_8f604ddba24a46a096df8d9f21a36c43 }}
+
+    - name: Build and push container image to registry
+      uses: docker/build-push-action@v3
+      with:
+        push: true
+        tags: contpis.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_ea90f3e30dc74c68a1b408963e8c69f5 }}/back-end:${{ github.sha }}
+        file: ./Dockerfile
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: 'production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+    - name: Deploy to Azure Web App
+      id: deploy-to-webapp
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'pistuto'
+        slot-name: 'production'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_605478e3d03c4f3e8621497518aeac81 }}
+        images: 'contpis.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_ea90f3e30dc74c68a1b408963e8c69f5 }}/back-end:${{ github.sha }}'
