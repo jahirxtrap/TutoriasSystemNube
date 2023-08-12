@@ -9,7 +9,7 @@
                 style="margin-left: 5%; margin-right: 5%; margin-top: 5%; margin-bottom: 5%;">
                 {% comment %} Display Messages {% endcomment %}
                 {% include 'message.vue' %}  
-                <h3 class="login-box-msg">Iniciar sesión en el sistema</h3>
+                <h3 class="login-box-msg">Iniciar Sesión en el sistema</h3>
 
                 <form action="{% url 'doLogin' %}" method="POST">
                     {% csrf_token %}
