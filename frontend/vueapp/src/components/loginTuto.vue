@@ -8,7 +8,7 @@
             <div class="card-body login-card-body"
                 style="margin-left: 5%; margin-right: 5%; margin-top: 5%; margin-bottom: 5%;">
                 {% comment %} Display Messages {% endcomment %}
-                {% include 'message.vue' %}  
+                {% include 'message.vue' %}
                 <h3 class="login-box-msg">Iniciar Sesión en el sistema</h3>
 
                 <form action="{% url 'doLogin' %}" method="POST">
